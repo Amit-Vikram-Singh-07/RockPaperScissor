@@ -20,25 +20,25 @@ let score = JSON.parse(localStorage.getItem("score")) || {
 
 function pickComputerMove() {
   const randNum = Math.random();
-  if (randNum > 0 && randNum <= 1 / 3) computerMove = "Rock";
-  else if (randNum > 1 / 3 && randNum <= 2 / 3) computerMove = "Paper";
-  else computerMove = "Scissor";
+  if (randNum > 0 && randNum <= 1 / 3) computerMove = "rock";
+  else if (randNum > 1 / 3 && randNum <= 2 / 3) computerMove = "paper";
+  else computerMove = "scissor";
   return computerMove;
 }
 
 function playGame(playerMove) {
   computerMove = pickComputerMove();
-  if (playerMove == "Rock") {
-    if (computerMove == "Rock") result = "Match tie.";
-    else if (computerMove == "Paper") result = "You lost.";
+  if (playerMove == "rock") {
+    if (computerMove == "rock") result = "Match tie.";
+    else if (computerMove == "paper") result = "You lost.";
     else result = "You win.";
-  } else if (playerMove == "Paper") {
-    if (computerMove == "Paper") result = "Match tie.";
-    else if (computerMove == "Scissor") result = "You lost.";
+  } else if (playerMove == "paper") {
+    if (computerMove == "paper") result = "Match tie.";
+    else if (computerMove == "scissor") result = "You lost.";
     else result = "You win.";
   } else {
-    if (computerMove == "Scissor") result = "Match tie.";
-    else if (computerMove == "Rock") result = "You lost.";
+    if (computerMove == "scissor") result = "Match tie.";
+    else if (computerMove == "rock") result = "You lost.";
     else result = "You win.";
   }
 
@@ -63,7 +63,7 @@ function updateScoreElement() {
 function updateMoves() {
   document.querySelector(
     ".js-moves"
-  ).innerHTML = `Your move : <img src="icons/${playerMove}-emoji.png" alt="Player Move" class="move-icon">  Computer move : <img src="icons/${computerMove}-emoji.png" alt="Computer Move" class="move-icon">`;
+  ).innerHTML = `Your move : <img src="icons/${playerMove}-emoji.png" alt="" class="move-icon">  Computer move : <img src="icons/${computerMove}-emoji.png" alt="" class="move-icon">`;
 }
 function updateResult() {
   document.querySelector(".js-result").innerHTML = `Result : ${result}`;

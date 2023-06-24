@@ -63,7 +63,7 @@ function updateScoreElement() {
 function updateMoves() {
   document.querySelector(
     ".js-moves"
-  ).innerHTML = `Your move : <img src="icons/${playerMove}-emoji.png" alt="" class="move-icon">  Computer move : <img src="icons/${computerMove}-emoji.png" alt="" class="move-icon">`;
+  ).innerHTML = `Your move : <img src="icons/${playerMove}-emoji.png" alt="Player Move" class="move-icon">  Computer move : <img src="icons/${computerMove}-emoji.png" alt="Computer Move" class="move-icon">`;
 }
 function updateResult() {
   document.querySelector(".js-result").innerHTML = `Result : ${result}`;
